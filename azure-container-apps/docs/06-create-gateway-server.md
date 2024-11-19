@@ -1,4 +1,4 @@
-# Create Spring Cloud Gateway
+# Create Gateway Server for Spring
 ## Introduction
 In this guide, you will learn how to create and configure a Gateway Server for Spring component on Azure Container Apps Environment. Gateway for Spring offers an efficient and powerful way to route, manage and handle API requests as part of a microservices architecture. It serves as an API Gateway that routes external requests to different services, adding various capabilities such as filtering, load balancing, and more.
 
@@ -129,7 +129,13 @@ EOF
 ### 3. Create the Gateway Server for Spring Java component
 Create a Gateway Server on the existing Azure Container Apps Environment and get the gateway URL:
 ```bash
-export GATEWAY_URL=$(az containerapp env java-component gateway-for-spring create --environment ${ENVIRONMENT} --resource-group ${RESOURCE_GROUP} --name ${GATEWAY_COMPONENT_NAME} --route-yaml ${ROUTE_PATH} --query properties.ingress.fqdn -o tsv)
+export GATEWAY_URL=$(az containerapp env java-component gateway-for-spring create \
+    --environment ${ENVIRONMENT} \
+    --resource-group ${RESOURCE_GROUP} \
+    --name ${GATEWAY_COMPONENT_NAME} \
+    --route-yaml ${ROUTE_PATH} \
+    --query properties.ingress.fqdn \
+    -o tsv)
 ```
 
 ### 4. Access the Application through Spring Cloud Gateway
@@ -142,7 +148,7 @@ If using Azure Cloud Shell or Windows, open the output from the following comman
 echo "https://${GATEWAY_URL}"
 ```
 You should see the Acme Fitness Store application:
-![An image of the ACME Fitness Store Application homepage](../../azure-spring-apps-enterprise/media/homepage.png)
+![An image of the ACME Fitness Store Application homepage](../media/homepage.png)
 
 ## Next Steps
 

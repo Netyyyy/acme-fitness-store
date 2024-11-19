@@ -1,6 +1,7 @@
 # Resource group and environment names
-RESOURCE_GROUP='rg-myacme'
-ENVIRONMENT='env-myacme'
+SUBSCRIPTION='subscription-id'                 # replace it with your subscription-id
+RESOURCE_GROUP='resource-group-name'           # existing resource group or one that will be created in next steps
+ENVIRONMENT='azure-container-apps-environment' # name of the environment that will be created in the next steps
 LOCATION='eastus2'
 
 #services name
@@ -11,12 +12,12 @@ CART_SERVICE_APP='acme-cart'
 FRONTEND_APP='frontend'
 
 # Java components
-CONFIG_COMPONENT_NAME='myacmeconfig135'
+CONFIG_COMPONENT_NAME='myacmeconfig'
 CONFIG_SERVER_GIT_URI="https://github.com/Azure-Samples/acme-fitness-store-config"
-EUREKA_COMPONENT_NAME='myacmeeureka135'
-GATEWAY_COMPONENT_NAME='myacmegateway135'
+EUREKA_COMPONENT_NAME='myacmeeureka'
+GATEWAY_COMPONENT_NAME='myacmegateway'
 ROUTE_PATH='routes.yml'
-ADMIN_COMPONENT_NAME='myacmeadmin135'
+ADMIN_COMPONENT_NAME='myacmeadmin'
 
 # database and cache
 AZURE_CACHE_NAME='redis-myacme'

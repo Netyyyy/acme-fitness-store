@@ -1,4 +1,4 @@
-# Create Config Server
+# Create Config Server for Spring
 ## Introduction
 In this guide, you will learn how to create a Config Server for Spring component on Azure Container Apps Environment. The Config Server for Spring provides a centralized location to make configuration data available to multiple applications. For more information on using Config Server for Spring component, refer to the [official documentation](https://learn.microsoft.com/azure/container-apps/java-config-server-usage).
 
@@ -22,7 +22,13 @@ echo "CONFIG_SERVER_GIT_URI=${CONFIG_SERVER_GIT_URI}"
 ### 2. Create Config Server for Spring Java component
 Create a Config Server on the existing Azure Container Apps Environment:
 ```bash
-az containerapp env java-component config-server-for-spring create --environment ${ENVIRONMENT} --resource-group ${RESOURCE_GROUP} --name ${CONFIG_COMPONENT_NAME} --min-replicas 1 --max-replicas 1 --configuration spring.cloud.config.server.git.uri=${CONFIG_SERVER_GIT_URI}
+az containerapp env java-component config-server-for-spring create \
+    --environment ${ENVIRONMENT} \
+    --resource-group ${RESOURCE_GROUP} \
+    --name ${CONFIG_COMPONENT_NAME} \
+    --min-replicas 1 \
+    --max-replicas 1 \
+    --configuration spring.cloud.config.server.git.uri=${CONFIG_SERVER_GIT_URI}
 ```
 
 ## Next Steps

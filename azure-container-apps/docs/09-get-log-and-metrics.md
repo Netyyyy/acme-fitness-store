@@ -10,9 +10,14 @@ This document provides instructions on how to view logs and metrics for your Azu
 ### 1. View Logs
 Use the following command to view logs for your Azure Container App:
 ```bash
-az containerapp logs show --name <container app name> --resource-group ${RESOURCE_GROUP} --follow
+az containerapp logs show \
+    --name <container app name> \
+    --resource-group ${RESOURCE_GROUP} \
+    --follow
 ```
 More details can be found in the [official documentation](https://learn.microsoft.com/azure/container-apps/logging).
 
 ### 2. View Metrics
-See [Monitor Azure Container Apps metrics](https://learn.microsoft.com/azure/container-apps/metrics).
+You can go to your container app on Portal to see metrics. For example, monitor the metrics of acme-catalog app:
+![An image of the ACME Fitness Store Application metrics](../media/java-metrics.jpg)
+See [Java metrics for Java apps in Azure Container Apps](https://learn.microsoft.com/azure/container-apps/java-metrics) for more information.
