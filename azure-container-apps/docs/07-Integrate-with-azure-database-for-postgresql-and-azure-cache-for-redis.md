@@ -75,4 +75,4 @@ az containerapp connection validate -g ${RESOURCE_GROUP} -n ${CATALOG_SERVICE_AP
 
 ## Next Steps
 
-- Follow [08-create-admin-server](./08-create-admin-server) to create an admin server on Azure Container Apps Environment.
+- Follow [08-create-admin-server](./08-create-admin-server.md) to create an admin server on Azure Container Apps Environment.

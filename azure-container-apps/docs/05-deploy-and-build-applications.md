@@ -70,4 +70,4 @@ export FRONTEND_URL=$(az containerapp create --name ${FRONTEND_APP} --resource-g
 
 ## Next Steps
 
-- Follow [06-create-gateway-server](./06-create-gateway-server) to create a Gateway Server on Azure Container Apps Environment.
+- Follow [06-create-gateway-server](./06-create-gateway-server.md) to create a Gateway Server on Azure Container Apps Environment.
