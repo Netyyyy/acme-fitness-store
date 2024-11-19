@@ -25,7 +25,7 @@ Create a new folder and clone the sample app repository to your Azure Cloud acco
 ```shell
 mkdir source-code
 cd source-code
-git clone https://github.com/Azure-Samples/acme-fitness-store
+git clone https://github.com/Netyyyy/acme-fitness-store.git -b myao/aca
 cd acme-fitness-store
 ```
 
