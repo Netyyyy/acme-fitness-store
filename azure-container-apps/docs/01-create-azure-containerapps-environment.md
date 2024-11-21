@@ -23,23 +23,27 @@ This document provides a step-by-step guide to create an Azure Container Apps En
 ### 1. Clone the repo
 Create a new folder and clone the sample app repository to your Azure Cloud account:
 ```shell
-mkdir source-code
-cd source-code
-git clone https://github.com/Netyyyy/acme-fitness-store.git -b myao/aca
+git clone https://github.com/Azure-Samples/acme-fitness-store.git
 cd acme-fitness-store
 ```
 
 ### 2. Set Variables
-1. Update below resource information in `azure-container-apps/scripts/setup-env-variables.sh`:
+1. Create environment variables file setup-env-variables.sh based on template.
+```bash
+cp azure-container-apps/scripts/setup-env-variables-template.sh setup-env-variables.sh
+```
+
+2. Update below resource information in `setup-env-variables.sh`:
 ```
 SUBSCRIPTION='subscription-id'                 # replace it with your subscription-id
 RESOURCE_GROUP='resource-group-name'           # existing resource group or one that will be created in next steps
 ENVIRONMENT='azure-container-apps-environment' # name of the environment that will be created in the next steps
+ACR_NAME='azure-container-registry-name'       # existing ACR or one that will be created in next steps
 ```
 
 2. Set up the variables for your environment:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 az account set --subscription ${SUBSCRIPTION}
 
 echo "RESOURCE_GROUP=${RESOURCE_GROUP}"

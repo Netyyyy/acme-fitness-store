@@ -14,10 +14,10 @@ By the end of this guide, you will have an Azure Database for PostgreSQL and an 
 
 ## Steps
 
-### 1. Set Variables
-Set up the variables to prepare database and cache:
+### 1. Verify Variables
+Verify the variables to prepare database and cache:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "AZURE_CACHE_NAME=${AZURE_CACHE_NAME}"
 echo "POSTGRES_SERVER_NAME=${POSTGRES_SERVER_NAME}"

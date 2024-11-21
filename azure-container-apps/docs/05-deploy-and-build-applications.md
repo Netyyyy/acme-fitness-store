@@ -12,27 +12,27 @@ After completing this guide, you will have 5 container services:
 
 ## Steps
 
-### 1. Set up the variables
-Set up the variables to deploy container apps:
+### 1. Verify variables
+Verify the variables to deploy container apps:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "ACR_NAME=${ACR_NAME}"
 echo "ACR_LOGIN_SERVER=${ACR_LOGIN_SERVER}"
 echo "CATALOG_SERVICE_APP=${CATALOG_SERVICE_APP}"
 echo "PAYMENT_SERVICE_APP=${PAYMENT_SERVICE_APP}"
-echo "ORDER_SERVICE_APP=${ORDER_SERVICE_APPq}"
+echo "ORDER_SERVICE_APP=${ORDER_SERVICE_APP}"
 echo "CART_SERVICE_APP=${CART_SERVICE_APP}"
 echo "FRONTEND_APP=${FRONTEND_APP}"
 ```
 
 ### 2. Assign role to the Azure Container Apps Environment for pulling images from Azure Container Registry
-1. Get resource ID of the user-assigned identity:
+1. Get resource ID of the system assigned managed identity:
 ```bash
 export USERID=$(az containerapp env show --resource-group ${RESOURCE_GROUP} --name ${ENVIRONMENT} --query id --output tsv)
 ```
 
-2. Get service principal ID of the user-assigned identity:
+2. Get service principal ID of the system assigned managed identity:
 ```bash
 export SPID=$(az containerapp env show --resource-group ${RESOURCE_GROUP} --name ${ENVIRONMENT} --query identity.principalId --output tsv)
 ```
@@ -49,7 +49,7 @@ az containerapp create \
     --name ${PAYMENT_SERVICE_APP} \
     --resource-group ${RESOURCE_GROUP} \
     --environment ${ENVIRONMENT} \
-    --image ${ACR_LOGIN_SERVER}/${PAYMENT_SERVICE_APP}:${PAYMENT_SERVICE_APP_IMAGE_TAG} \
+    --image ${ACR_LOGIN_SERVER}/${PAYMENT_SERVICE_APP}:${APP_IMAGE_TAG} \
     --min-replicas 1 \
     --ingress external \
     --target-port 8080 \
@@ -66,7 +66,7 @@ export CATALOG_SERVICE_URL=$(az containerapp create \
     --name ${CATALOG_SERVICE_APP} \
     --resource-group ${RESOURCE_GROUP} \
     --environment ${ENVIRONMENT} \
-    --image ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${CATALOG_SERVICE_APP_IMAGE_TAG} \
+    --image ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${APP_IMAGE_TAG} \
     --min-replicas 1 \
     --ingress external \
     --target-port 8080 \
@@ -88,7 +88,7 @@ export ORDER_SERVICE_URL=$(az containerapp create \
     --name ${ORDER_SERVICE_APP} \
     --resource-group ${RESOURCE_GROUP} \
     --environment ${ENVIRONMENT} \
-    --image ${ACR_LOGIN_SERVER}/${ORDER_SERVICE_APP}:${ORDER_SERVICE_APP_IMAGE_TAG} \
+    --image ${ACR_LOGIN_SERVER}/${ORDER_SERVICE_APP}:${APP_IMAGE_TAG} \
     --min-replicas 1 \
     --ingress external \
     --target-port 8080 \
@@ -107,7 +107,7 @@ export CART_SERVICE_URL=$(az containerapp create \
     --name ${CART_SERVICE_APP} \
     --resource-group ${RESOURCE_GROUP} \
     --environment ${ENVIRONMENT} \
-    --image ${ACR_LOGIN_SERVER}/${CART_SERVICE_APP}:${CART_SERVICE_APP_IMAGE_TAG} \
+    --image ${ACR_LOGIN_SERVER}/${CART_SERVICE_APP}:${APP_IMAGE_TAG} \
     --min-replicas 1 \
     --ingress external \
     --target-port 8080 \
@@ -127,7 +127,7 @@ export FRONTEND_URL=$(az containerapp create \
     --name ${FRONTEND_APP} \
     --resource-group ${RESOURCE_GROUP} \
     --environment ${ENVIRONMENT} \
-    --image ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${FRONTEND_APP_IMAGE_TAG} \
+    --image ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${APP_IMAGE_TAG} \
     --min-replicas 1 \
     --ingress external \
     --target-port 8080 \

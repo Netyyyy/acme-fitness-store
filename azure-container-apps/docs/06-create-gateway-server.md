@@ -10,10 +10,10 @@ By the end of this guide, you will have a running Getaway Server for Spring comp
 
 ## Steps
 
-### 1. Setup variables
-Set up the variables to create Gateway Server:
+### 1. Verify variables
+Verify the variables to create Gateway Server:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "GATEWAY_COMPONENT_NAME=${GATEWAY_COMPONENT_NAME}"
 echo "ROUTE_PATH=${ROUTE_PATH}"

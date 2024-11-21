@@ -10,10 +10,10 @@ By the end of this guide, you will have a running Config Server for Spring compo
 
 ## Steps
 
-### 1. Set Variables
-Set up the variables to create Config Server:
+### 1. Verify Variables
+Verify the variables to create Config Server:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "CONFIG_COMPONENT_NAME=${CONFIG_COMPONENT_NAME}"
 echo "CONFIG_SERVER_GIT_URI=${CONFIG_SERVER_GIT_URI}"

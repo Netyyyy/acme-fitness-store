@@ -12,10 +12,10 @@ By the end of this guide, you will have a running Admin server for Spring compon
 
 ## Steps
 
-### 1. Set Variables
-Set up the variables used to Admin Server:
+### 1. Verify Variables
+Verify the variables used to Admin Server:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "ADMIN_COMPONENT_NAME=${ADMIN_COMPONENT_NAME}"
 ```
@@ -42,6 +42,8 @@ echo https://"$(az containerapp env java-component admin-for-spring show \
     -o tsv)"
 ```
 Open the URL and you should see the Spring Boot Admin dashboard.
+> [!NOTE]
+> Assign yourself **Container Apps ManagedEnvironments Contributor** role if you cannot access the URL.
 
 ## Next Steps
 

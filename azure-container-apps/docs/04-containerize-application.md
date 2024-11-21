@@ -14,10 +14,10 @@ Buildpacks provide a higher-level abstraction for building container images. The
 
 ## Steps
 
-### 1. Set up variables
-Set up the variables to create Azure Container Registry (ACR) and build the container images:
+### 1. Verify variables
+Verify the variables to create Azure Container Registry (ACR) and build the container images:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "ACR_NAME=${ACR_NAME}"
 echo "ACR_LOGIN_SERVER=${ACR_LOGIN_SERVER}"
@@ -26,11 +26,7 @@ echo "PAYMENT_SERVICE_APP=${PAYMENT_SERVICE_APP}"
 echo "ORDER_SERVICE_APP=${ORDER_SERVICE_APPq}"
 echo "CART_SERVICE_APP=${CART_SERVICE_APP}"
 echo "FRONTEND_APP=${FRONTEND_APP}"
-echo "CATALOG_SERVICE_APP_IMAGE_TAG=${CATALOG_SERVICE_APP_IMAGE_TAG}"
-echo "PAYMENT_SERVICE_APP_IMAGE_TAG=${PAYMENT_SERVICE_APP_IMAGE_TAG}"
-echo "ORDER_SERVICE_APP_IMAGE_TAG=${ORDER_SERVICE_APP_IMAGE_TAG}"
-echo "CART_SERVICE_APP_IMAGE_TAG=${CART_SERVICE_APP_IMAGE_TAG}"
-echo "FRONTEND_APP_IMAGE_TAG=${FRONTEND_APP_IMAGE_TAG}"
+echo "APP_IMAGE_TAG=${APP_IMAGE_TAG}"
 ```
 
 ### 2. Open your Docker environment
@@ -42,29 +38,29 @@ The following commands will build each application using the Pack CLI and the Pa
 
 ```bash
 # Build Catalog Service
-pack build ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${CATALOG_SERVICE_APP_IMAGE_TAG} \
+pack build ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${APP_IMAGE_TAG} \
     --path apps/acme-catalog \
     --builder paketobuildpacks/builder-jammy-base \
     -e BP_JVM_VERSION=17
 
 # Build Payment Service
-pack build ${ACR_LOGIN_SERVER}/${PAYMENT_SERVICE_APP}:${PAYMENT_SERVICE_APP_IMAGE_TAG} \
+pack build ${ACR_LOGIN_SERVER}/${PAYMENT_SERVICE_APP}:${APP_IMAGE_TAG} \
     --path apps/acme-payment \
     --builder paketobuildpacks/builder-jammy-base \
     -e BP_JVM_VERSION=17
 
 # Build Order Service
-pack build ${ACR_LOGIN_SERVER}/${ORDER_SERVICE_APP}:${ORDER_SERVICE_APP_IMAGE_TAG} \
+pack build ${ACR_LOGIN_SERVER}/${ORDER_SERVICE_APP}:${APP_IMAGE_TAG} \
     --path apps/acme-order \
     --builder paketobuildpacks/builder-jammy-base
 
 # Build Cart Service
-pack build ${ACR_LOGIN_SERVER}/${CART_SERVICE_APP}:${CART_SERVICE_APP_IMAGE_TAG} \
+pack build ${ACR_LOGIN_SERVER}/${CART_SERVICE_APP}:${APP_IMAGE_TAG} \
     --path apps/acme-cart \
     --builder paketobuildpacks/builder-jammy-base
 
 # Build Frontend App
-pack build ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${FRONTEND_APP_IMAGE_TAG} \
+pack build ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${APP_IMAGE_TAG} \
     --path apps/acme-shopping \
     --builder paketobuildpacks/builder-jammy-base
 ```
@@ -87,11 +83,11 @@ az acr login \
 
 3. Push Docker images to container registry
 ```bash
-docker push ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${CATALOG_SERVICE_APP_IMAGE_TAG}
-docker push ${ACR_LOGIN_SERVER}/${PAYMENT_SERVICE_APP}:${PAYMENT_SERVICE_APP_IMAGE_TAG}
-docker push ${ACR_LOGIN_SERVER}/${ORDER_SERVICE_APP}:${ORDER_SERVICE_APP_IMAGE_TAG}
-docker push ${ACR_LOGIN_SERVER}/${CART_SERVICE_APP}:${CART_SERVICE_APP_IMAGE_TAG}
-docker push ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${FRONTEND_APP_IMAGE_TAG}
+docker push ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${APP_IMAGE_TAG}
+docker push ${ACR_LOGIN_SERVER}/${PAYMENT_SERVICE_APP}:${APP_IMAGE_TAG}
+docker push ${ACR_LOGIN_SERVER}/${ORDER_SERVICE_APP}:${APP_IMAGE_TAG}
+docker push ${ACR_LOGIN_SERVER}/${CART_SERVICE_APP}:${APP_IMAGE_TAG}
+docker push ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${APP_IMAGE_TAG}
 ```
 
 ## Next Steps

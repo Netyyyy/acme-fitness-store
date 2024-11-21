@@ -10,10 +10,10 @@ By the end of this guide, you will have a running Eureka Server for Spring compo
 
 ## Steps
 
-### 1. Setup variables
-Set up the variables to create Eureka Server:
+### 1. Verify variables
+Verify the variables to create Eureka Server:
 ```bash
-source azure-container-apps/scripts/setup-env-variables.sh
+source setup-env-variables.sh
 
 echo "EUREKA_COMPONENT_NAME=${EUREKA_COMPONENT_NAME}"
 ```
