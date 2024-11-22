@@ -36,9 +36,7 @@ cp azure-container-apps/scripts/setup-env-variables-template.sh setup-env-variab
 2. Update below resource information in `setup-env-variables.sh`:
 ```
 SUBSCRIPTION='subscription-id'                 # replace it with your subscription-id
-RESOURCE_GROUP='resource-group-name'           # existing resource group or one that will be created in next steps
-ENVIRONMENT='azure-container-apps-environment' # name of the environment that will be created in the next steps
-ACR_NAME='azure-container-registry-name'       # existing ACR or one that will be created in next steps
+PREFIX='unique-prefix'                         # unique prefix for all resources(not use special characters)
 ```
 
 2. Set up the variables for your environment:

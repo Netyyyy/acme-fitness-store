@@ -1,7 +1,8 @@
 # Resource group and environment names
 SUBSCRIPTION='subscription-id'                 # replace it with your subscription-id
-RESOURCE_GROUP='resource-group-name'           # existing resource group or one that will be created in next steps
-ENVIRONMENT='azure-container-apps-environment' # name of the environment that will be created in the next steps
+PREFIX='unique-prefix'                         # unique prefix for all resources(not use special characters)
+RESOURCE_GROUP=${PREFIX}-rg
+ENVIRONMENT=${PREFIX}-env
 LOCATION='eastus2'
 
 #services name
@@ -12,22 +13,21 @@ CART_SERVICE_APP='acme-cart'
 FRONTEND_APP='frontend'
 
 # Java components
-CONFIG_COMPONENT_NAME='myacmeconfig'
+CONFIG_COMPONENT_NAME=${PREFIX}config
 CONFIG_SERVER_GIT_URI="https://github.com/Azure-Samples/acme-fitness-store-config"
-EUREKA_COMPONENT_NAME='myacmeeureka'
-GATEWAY_COMPONENT_NAME='myacmegateway'
+EUREKA_COMPONENT_NAME=${PREFIX}eureka
+GATEWAY_COMPONENT_NAME=${PREFIX}gateway
 ROUTE_PATH='routes.yml'
-ADMIN_COMPONENT_NAME='myacmeadmin'
+ADMIN_COMPONENT_NAME=${PREFIX}admin
 
 # database and cache
-AZURE_CACHE_NAME='redis-myacme'
-POSTGRES_SERVER_NAME='postgre-myacme'
+AZURE_CACHE_NAME=${PREFIX}-redis
+POSTGRES_SERVER_NAME=${PREFIX}-postgre
 CATALOG_SERVICE_DB='catalogdb'
-CART_SERVICE_CACHE_CONNECTION='cartconnection'
-CATALOG_SERVICE_PSQL_CONNECTION='catalogconnection'
-
+CART_SERVICE_CACHE_CONNECTION=${PREFIX}cartconnection
+CATALOG_SERVICE_PSQL_CONNECTION=${PREFIX}catalogconnection
 
 # ACR and image tags
-ACR_NAME='azure-container-registry-name'       # existing ACR or one that will be created in next steps
+ACR_NAME=${PREFIX}acr
 ACR_LOGIN_SERVER=${ACR_NAME}.azurecr.io
 APP_IMAGE_TAG="latest"
