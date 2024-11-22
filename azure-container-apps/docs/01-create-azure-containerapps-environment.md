@@ -21,7 +21,7 @@ This document provides a step-by-step guide to create an Azure Container Apps En
 ## Steps
 
 ### 1. Clone the repo
-Create a new folder and clone the sample app repository to your Azure Cloud account:
+Create a new folder and clone the sample app repository:
 ```shell
 git clone https://github.com/Azure-Samples/acme-fitness-store.git
 cd acme-fitness-store
