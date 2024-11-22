@@ -1,4 +1,9 @@
 spring:
+  config:
+    import: optional:configserver:http://config-server:8888
+  cloud:
+    config:
+      name: catalog
   datasource:
     url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
   jpa:

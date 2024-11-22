@@ -29,13 +29,19 @@ echo "FRONTEND_APP=${FRONTEND_APP}"
 echo "APP_IMAGE_TAG=${APP_IMAGE_TAG}"
 ```
 
-### 2. Open your Docker environment
+### 2. Prepare resources for Azure Container Apps used
+```bash
+cp azure-container-apps/resources/catalog/application.yaml apps/acme-catalog/src/main/resources/application.yaml
+cp azure-container-apps/resources/catalog/build.gradle apps/acme-catalog/build.gradle
+cp azure-container-apps/resources/payment/application.yml apps/acme-payment/src/main/resources/application.yml
+cp azure-container-apps/resources/payment/build.gradle apps/acme-payment/build.gradle
+```
+
+### 3. Open your Docker environment
 Open your docker environment to build and push the images to ACR.
 
-### 3. Build applications
-
+### 4. Build applications
 The following commands will build each application using the Pack CLI and the Paketo Buildpacks builder. Each application will be built with the necessary runtime dependencies and tagged with the specified image tag. The built images will then be pushed to the Azure Container Registry.
-
 ```bash
 # Build Catalog Service
 pack build ${ACR_LOGIN_SERVER}/${CATALOG_SERVICE_APP}:${APP_IMAGE_TAG} \
@@ -65,7 +71,7 @@ pack build ${ACR_LOGIN_SERVER}/${FRONTEND_APP}:${APP_IMAGE_TAG} \
     --builder paketobuildpacks/builder-jammy-base
 ```
 
-### 4. Create Azure Container Registry and Push Images
+### 5. Create Azure Container Registry and Push Images
 1. Create Azure Container Registry (ACR) for storing application images built by buildpack:
 ```bash
 az acr create \

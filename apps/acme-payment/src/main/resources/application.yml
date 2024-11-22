@@ -1,9 +1,6 @@
-spring:
-  config:
-    import: optional:configserver:http://config-server:8888
-  cloud:
-    config:
-      name: payment
+eureka:
+  client:
+    enabled: false
 management:
   endpoints:
     web:
