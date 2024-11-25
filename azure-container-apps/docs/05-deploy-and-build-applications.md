@@ -41,7 +41,7 @@ export SPID=$(az containerapp env show --resource-group ${RESOURCE_GROUP} --name
 ```bash
 az role assignment create --assignee ${SPID} --scope ${USERID} --role acrpull
 ```
-> note
+> [!NOTE]
 > If you get a `MissingSubscription` error when using git bash, add `MSYS_NO_PATHCONV=1` before the command.
 
 ### 3. Deploy the Application
