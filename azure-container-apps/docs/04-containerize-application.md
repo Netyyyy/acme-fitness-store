@@ -30,11 +30,9 @@ echo "APP_IMAGE_TAG=${APP_IMAGE_TAG}"
 ```
 
 ### 2. Prepare resources for Azure Container Apps used
+The source built previously for the Azure Spring Apps Enterprise tier does not include the Config Server dependency and configuration required by Azure container apps. Therefore, use the following commands to copy the necessary resources to the corresponding application.
 ```bash
-cp azure-container-apps/resources/catalog/application.yaml apps/acme-catalog/src/main/resources/application.yaml
-cp azure-container-apps/resources/catalog/build.gradle apps/acme-catalog/build.gradle
-cp azure-container-apps/resources/payment/application.yml apps/acme-payment/src/main/resources/application.yml
-cp azure-container-apps/resources/payment/build.gradle apps/acme-payment/build.gradle
+cp azure-container-apps/resources/apps . -r
 ```
 
 ### 3. Open your Docker environment

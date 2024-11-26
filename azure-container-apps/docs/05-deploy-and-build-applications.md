@@ -59,7 +59,7 @@ az containerapp create \
     --enable-java-metrics \
     --bind ${CONFIG_COMPONENT_NAME} ${EUREKA_COMPONENT_NAME} \
     --registry-server ${ACR_LOGIN_SERVER} \
-    --registry-identity system
+    --registry-identity 'system'
 ```
 
 2. Deploy the Catalog Service and export the URL for next steps:
@@ -76,7 +76,7 @@ export CATALOG_SERVICE_URL=$(az containerapp create \
     --enable-java-metrics \
     --bind ${CONFIG_COMPONENT_NAME} ${EUREKA_COMPONENT_NAME} \
     --registry-server ${ACR_LOGIN_SERVER} \
-    --registry-identity system \
+    --registry-identity 'system' \
     --query properties.configuration.ingress.fqdn \
     --output tsv)
 az containerapp show \
@@ -95,7 +95,7 @@ export ORDER_SERVICE_URL=$(az containerapp create \
     --ingress external \
     --target-port 8080 \
     --registry-server ${ACR_LOGIN_SERVER} \
-    --registry-identity system \
+    --registry-identity 'system' \
     --query properties.configuration.ingress.fqdn \
     --output tsv)
 az containerapp show \
@@ -115,7 +115,7 @@ export CART_SERVICE_URL=$(az containerapp create \
     --target-port 8080 \
     --env-vars CART_PORT=8080 \
     --registry-server ${ACR_LOGIN_SERVER} \
-    --registry-identity system \
+    --registry-identity 'system' \
     --query properties.configuration.ingress.fqdn \
     --output tsv)
 az containerapp show \
@@ -135,7 +135,7 @@ export FRONTEND_URL=$(az containerapp create \
     --target-port 8080 \
     --bind ${CONFIG_COMPONENT_NAME} ${EUREKA_COMPONENT_NAME} \
     --registry-server ${ACR_LOGIN_SERVER} \
-    --registry-identity system \
+    --registry-identity 'system' \
     --query properties.configuration.ingress.fqdn \
     --output tsv)
 az containerapp show \

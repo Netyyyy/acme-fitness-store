@@ -30,7 +30,7 @@ cd acme-fitness-store
 ### 2. Set Variables
 1. Create environment variables file setup-env-variables.sh based on template.
 ```bash
-cp azure-container-apps/scripts/setup-env-variables-template.sh setup-env-variables.sh
+cp azure-container-apps/scripts/setup-env-variables-template.sh setup-env-variables.sh -i
 ```
 
 2. Update below resource information in `setup-env-variables.sh`:
