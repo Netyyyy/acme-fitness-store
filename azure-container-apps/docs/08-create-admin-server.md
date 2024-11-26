@@ -4,7 +4,7 @@ In this guide, you will learn how to create an Admin Server for Spring component
 
 ## Prerequisites
 
-- Completion of [07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis](./07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis).
+- Completion of [07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis](./07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis.md).
 
 ## Outputs
 
