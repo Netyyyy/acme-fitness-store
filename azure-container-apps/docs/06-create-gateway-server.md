@@ -152,5 +152,5 @@ You should see the Acme Fitness Store application:
 
 ## Next Steps
 
-- Follow [07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis](./07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis) to Integrate with persistent stores outside the applications.
+- Follow [07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis](./07-integrate-with-azure-database-for-postgresql-and-azure-cache-for-redis.md) to Integrate with persistent stores outside the applications.
 
