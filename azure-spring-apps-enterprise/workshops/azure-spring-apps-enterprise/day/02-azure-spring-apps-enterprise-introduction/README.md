@@ -1,10 +1,11 @@
+
 # 02 - Azure Spring Apps Enterprise Introduction
 
 In this lab we will explore Azure Spring Apps Enterprise (ASA-E) and create an instance we will use throughout the day.
 
 ## Accept Azure Spring Apps plan
 
-* You need to accept the Azure Spring Apps Enterprise tier, e.g.
+* You need to accept the Azure Spring Apps Enterprise plan, e.g.
 
 ```shell
 az term accept --publisher vmware-inc --product azure-spring-cloud-vmware-tanzu-2 --plan asa-ent-hr-mtr

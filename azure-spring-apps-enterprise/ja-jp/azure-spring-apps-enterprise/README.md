@@ -94,7 +94,7 @@ Azure 上に Java アプリケーションをデプロイするため、Azure �
 az extension add --name spring
 ```
 
-ご注意: - 最新のエンタープライズ Tier の機能を有効にし VMware Tanzu コンポーネントを構成するためには、`spring` という名の CLI 拡張バージョン '1.14.0' 以降が必須です。次のコマンドを使用して、以前のバージョンを削除し、最新の Enterprise tier 拡張機能をインストールしてください。
+ご注意: - 最新のエンタープライズ Tier の機能を有効にし VMware Tanzu コンポーネントを構成するためには、`spring` という名の CLI 拡張バージョン '1.14.0' 以降が必須です。次のコマンドを使用して、以前のバージョンを削除し、最新の Enterprise Tier 拡張機能をインストールしてください。
 
 ```shell
 az extension update --name spring
