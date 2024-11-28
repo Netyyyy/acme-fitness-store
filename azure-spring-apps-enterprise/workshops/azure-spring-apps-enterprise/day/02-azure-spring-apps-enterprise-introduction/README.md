@@ -1,4 +1,3 @@
-
 # 02 - Azure Spring Apps Enterprise Introduction
 
 In this lab we will explore Azure Spring Apps Enterprise (ASA-E) and create an instance we will use throughout the day.
