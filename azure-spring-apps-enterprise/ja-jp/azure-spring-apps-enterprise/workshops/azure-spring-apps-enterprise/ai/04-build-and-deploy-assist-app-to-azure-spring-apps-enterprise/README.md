@@ -64,7 +64,7 @@
 また、エンタープライズティアで VMware Tanzu コンポーネントを設定しました。
 Azure Spring Apps や VMware Tanzu コンポーネントについてさらに詳しく知りたい場合は、下記をご覧ください：
 
-* [Azure Spring Apps](https://azure.microsoft.com/services/spring-cloud/)
+* [Azure Spring Apps](https://azure.microsoft.com/products/spring-apps/)
 * [Azure Spring Apps docs](https://docs.microsoft.com/azure/spring-cloud/quickstart-provision-service-instance-enterprise?tabs=azure-portal)
 * [Deploy Spring Apps from scratch](https://github.com/microsoft/azure-spring-cloud-training)
 * [Deploy existing Spring Apps](https://github.com/Azure-Samples/azure-spring-cloud)
